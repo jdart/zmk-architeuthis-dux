@@ -75,7 +75,7 @@
                         };
                         c_esc {
                                 timeout-ms = <50>;            
-                                key-positions = <11 17>;            
+                                key-positions = <12 17>; 
                                 bindings = <&kp ESCAPE>;    
                         };
                         c_rmgui {            
