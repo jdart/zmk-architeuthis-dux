@@ -8,10 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-
-#define SYM_L 1
-#define NUM_L 3
-
 &lt { quick_tap_ms = <100>; };
 
 / {
@@ -172,34 +168,16 @@
     &kp Q       &kp W        &kp E          &kp R        &kp T          &kp Y    &kp U         &kp I           &kp O       &kp P
     &kp A       &kp S        &kp D          &kp F        &kp G          &kp H    &kp J         &kp K           &kp L       &kp SEMI
     &kp Z       &kp X        &kp C          &kp V        &kp B          &kp N    &kp M         &kp COMMA       &kp DOT     &kp FSLH
-                             &lt NUM_L BKSP &kp TAB                     &kp RET  &lt NUM_L SPACE
+                                            &lt 1 BKSP   &kp TAB        &kp RET  &lt 1 SPACE
                         >;
                 };
 
-                symbol_layer {
-                        bindings = <
-    &kp EXCL   &kp AT     &kp LBRC  &kp RBRC  &trans            &trans    &kp UNDER  &kp BSLH   &kp SQT     &kp DQT
-    &trans     &kp DLLR   &kp LPAR  &kp RPAR  &kp GRAVE         &kp PLUS  &kp MINUS  &kp FSLH   &kp STAR    &kp DEL
-    &trans     &kp CARET  &kp LBKT  &kp RBKT  &kp TILDE         &kp AMPS  &kp PIPE   &trans     &kp HASH    &kp PRCNT
-                                    &kp EQUAL &trans            &trans    &kp EQUAL
-                        >;
-                };
-
-                number_layer {
-                        bindings = <
-    &trans      &kp N7      &kp N8       &kp N9      &trans             &trans    &kp LA(LG(LARW))    &kp LA(LG(RARW))    &trans      &trans
-    &trans      &kp N4      &kp N5       &kp N6      &trans             &kp LARW  &kp DARW  &kp UARW  &kp RARW     &bt BT_CLR
-    &kp N0      &kp N1      &kp N2       &kp N3      &trans             &trans    &kp LG(LBKT)   &kp LG(RBKT) &trans &reset
-                            &kp EQUAL    &trans                         &trans    &kp EQUAL
-                        >;
-                };
-
-                number_layer_c {
+                raise {
                         bindings = <
     &trans      &kp N7      &kp N8       &kp N9      &kp PRCNT          &kp TILDE  &kp EXCL    &kp SQT   &kp DQT     &kp AT
     &kp PLUS    &kp N4      &kp N5       &kp N6      &kp STAR           &kp LARW   &kp DARW    &kp UARW  &kp RARW    &kp CARET
     &kp N0      &kp N1      &kp N2       &kp N3      &kp FSLH           &kp GRAVE  &kp AMPS    &kp PIPE  &kp UNDER   &kp HASH
-                            &kp EQUAL    &kp DLLR                       &kp MINUS  &kp GT
+                                         &kp EQUAL   &kp DLLR           &kp GT     &kp MINUS
                         >;
                 };
         };
@@ -210,7 +188,7 @@
    X | 7   | 8   | 9 | %     ~ | ! | ' | " | @
    + | 4   | 5   | 6 | *     l | d | u | r | ^
    0 | 1   | 2   | 3 | /     ` | & | | | _ | #
-                   = | $     - | >
+                   = | $     > | -
 
    x | AG< | AG> | x | x     x | ] | } | ) | x
    x | G[  | G]  | x | x     x | [ | { | ( | x
