@@ -31,6 +31,11 @@
                                 key-positions = <20 21 22>;
                                 bindings = <&sk LA(LGUI)>;
                         };
+                        c_laltshift {
+                                timeout-ms = <50>;
+                                key-positions = <20 21 23>;
+                                bindings = <&sk LA(LSHFT)>;
+                        };
                         c_lctrl {
                                 timeout-ms = <50>;
                                 key-positions = <22 23>;
@@ -51,6 +56,11 @@
                                 key-positions = <27 28 29>;
                                 bindings = <&sk LA(LGUI)>;
                         };
+                        c_raltshift {
+                                timeout-ms = <50>;
+                                key-positions = <26 28 29>;
+                                bindings = <&sk LA(LSHFT)>;
+                        };
                         c_rctrl {
                                 timeout-ms = <50>;
                                 key-positions = <26 27>;
@@ -66,6 +76,16 @@
                                 key-positions = <11 13>;
                                 bindings = <&kp LSFT>;
                         };
+                        c_lmalt {
+                                timeout-ms = <50>;
+                                key-positions = <10 11>;
+                                bindings = <&kp LALT>;
+                        };
+                        c_lmaltsft {
+                                timeout-ms = <50>;
+                                key-positions = <10 11 13>;
+                                bindings = <&kp LA(LSHFT)>;
+                        };
                         c_lmguisft {
                                 timeout-ms = <50>;
                                 key-positions = <11 12 13>;
@@ -75,6 +95,16 @@
                                 timeout-ms = <50>;
                                 key-positions = <17 18>;
                                 bindings = <&kp LGUI>;
+                        };
+                        c_rmalt {
+                                timeout-ms = <50>;
+                                key-positions = <18 19>;
+                                bindings = <&kp LALT>;
+                        };
+                        c_rmaltsft {
+                                timeout-ms = <50>;
+                                key-positions = <16 18 19>;
+                                bindings = <&kp LA(LSHFT)>;
                         };
                         c_rmsft {
                                 timeout-ms = <50>;
@@ -138,6 +168,16 @@
                                 key-positions = <12 22>;
                                 bindings = <&kp LG(RBKT)>;
                         };
+                        c_ASU {
+                                timeout-ms = <50>;
+                                key-positions = <3 13>;
+                                bindings = <&kp LA(LS(DARW))>;
+                        };
+                        c_ASD {
+                                timeout-ms = <50>;
+                                key-positions = <13 23>;
+                                bindings = <&kp LA(LS(UARW))>;
+                        };
                         // misc
                         c_esc {
                                 timeout-ms = <50>;
@@ -196,7 +236,7 @@
    0 | 1   | 2   | 3 | #     ` | & | | | _ | \
                    = | $     > | -
 
-   x | AG< | AG> | x | x     x | ] | } | ) | x
-   x | G[  | G]  | x | x     x | [ | { | ( | x
+   x | AG< | AG> | ASU | x     x | ] | } | ) | x
+   x | G[  | G]  | ASD | x     x | [ | { | ( | x
 
 */
