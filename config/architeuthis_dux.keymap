@@ -282,6 +282,10 @@
                    = | $     > | -
 
    x | AG< | AG> | ASU | x     x | ] | } | ) | x
-   x | G[  | G]  | ASD | x   ESC | [ | { | ( | x
+   x | G[  | G]  | ASD | x     x | [ | { | ( | x
+
+   x   | Q   | B   | x        x | J   | :   | x
+   ALT | GUI | CTL | x        x | CTL | GUI | ALT
+   x   | x   | V   | x        x | K   | ESC | x
 
 */
