@@ -266,9 +266,9 @@
                 raise {
                         bindings = <
     &kp DEL     &kp N7      &kp N8       &kp N9      &kp PRCNT          &kp TILDE  &kp EXCL    &kp SQT   &kp DQT     &kp AT
-    &kp PLUS    &kp N4      &kp N5       &kp N6      &kp STAR           &kp LARW   &kp DARW    &kp UARW  &kp RARW    &kp CARET
+    &kp PLUS    &kp N4      &kp N5       &kp N6      &kp STAR           &kp LARW   &kp DARW    &kp UARW  &kp RARW    &kp EQUAL
     &kp N0      &kp N1      &kp N2       &kp N3      &kp HASH           &kp GRAVE  &kp AMPS    &kp PIPE  &kp UNDER   &kp BSLH
-                                         &kp EQUAL   &kp DLLR           &kp GT     &kp MINUS
+                                         &kp CARET   &kp DLLR           &kp GT     &kp MINUS
                         >;
                 };
         };
@@ -277,9 +277,9 @@
 /**
 
  DEL | 7   | 8   | 9 | %     ~ | ! | ' | " | @
-   + | 4   | 5   | 6 | *     l | d | u | r | ^
+   + | 4   | 5   | 6 | *     l | d | u | r | =
    0 | 1   | 2   | 3 | #     ` | & | | | _ | \
-                   = | $     > | -
+                   ^ | $     > | -
 
    x | AG< | AG> | ASU | x     x | ] | } | ) | x
    x | G[  | G]  | ASD | x     x | [ | { | ( | x
