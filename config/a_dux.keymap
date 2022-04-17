@@ -13,69 +13,28 @@
 
 / {
         behaviors {
+                lh_pht: left_hand_positional_hold_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "LEFT_POSITIONAL_HOLD_TAP";
+                        #binding-cells = <2>;
+                        flavor = "tap-unless-interrupted";
+                        tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+                        quick-tap-ms = <200>;
+                        bindings = <&kp>, <&kp>;
+                        hold-trigger-key-positions = <5 6 7 8 9>;    // <---[[right-hand keys]]
+                };
+                rh_pht: right_hand_positional_hold_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "RIGHT_POSITIONAL_HOLD_TAP";
+                        #binding-cells = <2>;
+                        flavor = "tap-unless-interrupted";
+                        tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+                        quick-tap-ms = <200>;
+                        bindings = <&kp>, <&kp>;
+                        hold-trigger-key-positions = <0 1 2 3 4>;    // <---[[left-hand keys]]
+                };
                 combos {
                         compatible = "zmk,combos";
-                        // modifiers
-                        c_lctrl {
-                                timeout-ms = <50>;
-                                key-positions = <12 13>;
-                                bindings = <&kp LCTRL>;
-                        };
-                        c_rctrl {
-                                timeout-ms = <50>;
-                                key-positions = <16 17>;
-                                bindings = <&kp LCTRL>;
-                        };
-                        c_lmgui {
-                                timeout-ms = <50>;
-                                key-positions = <11 12>;
-                                bindings = <&kp LGUI>;
-                        };
-                        c_lmsft {
-                                timeout-ms = <50>;
-                                key-positions = <11 13>;
-                                bindings = <&kp LSFT>;
-                        };
-                        c_lmalt {
-                                timeout-ms = <50>;
-                                key-positions = <10 11>;
-                                bindings = <&kp LALT>;
-                        };
-                        c_lmaltsft {
-                                timeout-ms = <50>;
-                                key-positions = <10 11 13>;
-                                bindings = <&kp LA(LSHFT)>;
-                        };
-                        c_lmguisft {
-                                timeout-ms = <50>;
-                                key-positions = <11 12 13>;
-                                bindings = <&kp LS(LGUI)>;
-                        };
-                        c_rmgui {
-                                timeout-ms = <50>;
-                                key-positions = <17 18>;
-                                bindings = <&kp LGUI>;
-                        };
-                        c_rmalt {
-                                timeout-ms = <50>;
-                                key-positions = <18 19>;
-                                bindings = <&kp LALT>;
-                        };
-                        c_rmaltsft {
-                                timeout-ms = <50>;
-                                key-positions = <16 18 19>;
-                                bindings = <&kp LA(LSHFT)>;
-                        };
-                        c_rmsft {
-                                timeout-ms = <50>;
-                                key-positions = <16 18>;
-                                bindings = <&kp LSFT>;
-                        };
-                        c_rmguisft {
-                                timeout-ms = <50>;
-                                key-positions = <16 17 18>;
-                                bindings = <&kp LS(LGUI)>;
-                        };
                         // symbols
                         c_LBRC {
                                 timeout-ms = <50>;
@@ -167,32 +126,22 @@
                         c_T {
                                 timeout-ms = <50>;
                                 key-positions = <2 3>;
-                                bindings = <&kp T>;
+                                bindings = <&kp B>;
                         };
                         c_Y {
                                 timeout-ms = <50>;
                                 key-positions = <6 7>;
-                                bindings = <&kp Y>;
-                        };
-                        c_Q {
-                                timeout-ms = <50>;
-                                key-positions = <1 2>;
-                                bindings = <&kp Q>;
-                        };
-                        c_P {
-                                timeout-ms = <50>;
-                                key-positions = <7 8>;
-                                bindings = <&kp P>;
+                                bindings = <&kp J>;
                         };
                         c_B {
                                 timeout-ms = <50>;
                                 key-positions = <22 23>;
-                                bindings = <&kp B>;
+                                bindings = <&kp V>;
                         };
                         c_N {
                                 timeout-ms = <50>;
                                 key-positions = <26 27>;
-                                bindings = <&kp N>;
+                                bindings = <&kp K>;
                         };
                 };
         };
@@ -201,9 +150,10 @@
                 compatible = "zmk,keymap";
                 default_layer {
                         bindings = <
-    &kp Q       &kp W        &kp E          &kp R        &kp T          &kp Y      &kp U         &kp I           &kp O       &kp P
-    &kp A       &kp S        &kp D          &kp F        &kp G          &kp H      &kp J         &kp K           &kp L       &kp SEMI
-    &kp Z       &kp X        &kp C          &kp V        &kp B          &kp N      &kp M         &kp COMMA       &kp DOT     &kp FSLH
+    &kp Q       &kp W        &kp P          &kp F        &kp B          &kp J      &kp L         &kp U           &kp Y       &kp SEMI
+    &lh_pht LALT A    &lh_pht LGUI R    &lh_pht LSFT S    &lh_pht LCTL T    &kp G    &kp M    &rh_pht RCTL N    &rh_pht RSFT E    &rh_pht RGUI I    &rh_pht RALT O
+    &kp A       &kp R        &kp S          &kp T        &kp G          &kp M      &kp N         &kp E           &kp I       &kp O
+    &kp Z       &kp X        &kp C          &kp D        &kp V          &kp K      &kp H         &kp COMMA       &kp DOT     &kp FSLH
                                             &kp BKSP     &lt 1 TAB      &lt 1 RET  &kp SPACE
                         >;
                 };
