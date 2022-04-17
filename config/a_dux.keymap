@@ -145,14 +145,13 @@
                         };
                 };
         };
-
+rddrrrrrrrrdrrrrrrdzzzzzzzzzzzaaarstgzxzcdarstneioluy;qwpfarstarstneionneiodzcxdzcxdzcxx
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
                         bindings = <
     &kp Q       &kp W        &kp P          &kp F        &kp B          &kp J      &kp L         &kp U           &kp Y       &kp SEMI
     &lh_pht LALT A    &lh_pht LGUI R    &lh_pht LSFT S    &lh_pht LCTL T    &kp G    &kp M    &rh_pht RCTL N    &rh_pht RSFT E    &rh_pht RGUI I    &rh_pht RALT O
-    &kp A       &kp R        &kp S          &kp T        &kp G          &kp M      &kp N         &kp E           &kp I       &kp O
     &kp Z       &kp X        &kp C          &kp D        &kp V          &kp K      &kp H         &kp COMMA       &kp DOT     &kp FSLH
                                             &kp BKSP     &lt 1 TAB      &lt 1 RET  &kp SPACE
                         >;
