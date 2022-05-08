@@ -157,7 +157,7 @@
                 modsl {
                         bindings = <
     &trans      &trans       &trans       &trans      &trans      &trans    &trans     &trans    &trans      &trans
-    &sk LALT    &sk LGUI     &sk LSFT     &sk LCTL    &trans      &trans    &trans     &trans    &trans      &trans
+    &skq LALT   &skq LGUI    &skq LSFT    &skq LCTL   &trans      &trans    &trans     &trans    &trans      &trans
     &trans      &trans       &trans       &trans      &trans      &trans    &trans     &trans    &trans      &trans
                                           &trans      &trans      &trans    &trans
                         >;
@@ -166,7 +166,7 @@
                 modsr {
                         bindings = <
     &trans    &trans   &trans   &trans  &trans      &trans    &trans       &trans        &trans      &transEMI
-    &trans    &trans   &trans   &trans  &trans      &trans    &sk RCTL     &sk RSFT      &sk RGUI    &sk RALT
+    &trans    &trans   &trans   &trans  &trans      &trans    &skq RCTL    &skq RSFT     &skq RGUI   &skq RALT
     &trans    &trans   &trans   &trans  &trans      &trans    &trans       &transOMMA    &transOT    &transSLH
                                 &trans  &trans      &trans    &trans
                         >;
