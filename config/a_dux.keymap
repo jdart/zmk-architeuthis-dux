@@ -13,27 +13,13 @@
 
 / {
         behaviors {
-                lh_pht: left_hand_positional_hold_tap {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "LEFT_POSITIONAL_HOLD_TAP";
-                        #binding-cells = <2>;
-                        flavor = "tap-preferred";
-                        // flavor = "tap-unless-interrupted";
-                        tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-                        quick-tap-ms = <0>;
-                        bindings = <&kp>, <&kp>;
-                        // hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;    // <---[[right-hand keys]]
-                };
-                rh_pht: right_hand_positional_hold_tap {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "RIGHT_POSITIONAL_HOLD_TAP";
-                        #binding-cells = <2>;
-                        flavor = "tap-preferred";
-                        // flavor = "tap-unless-interrupted";
-                        tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-                        quick-tap-ms = <0>;
-                        bindings = <&kp>, <&kp>;
-                        // hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;    // <---[[left-hand keys]]
+                skq: sticky_key_quick_release {
+                        compatible = "zmk,behavior-sticky-key";
+                        label = "STICKY_KEY_QUICK_RELEASE";
+                        #binding-cells = <1>;
+                        bindings = <&kp>;
+                        release-after-ms = <1000>;
+                        quick-release;
                 };
                 combos {
                         compatible = "zmk,combos";
@@ -152,10 +138,10 @@
                 compatible = "zmk,keymap";
                 default_layer {
                         bindings = <
-    &kp Q       &kp W        &kp F          &kp P        &kp B          &kp J      &kp L         &kp U           &kp Y       &kp SEMI
-    &lh_pht LALT A    &lh_pht LGUI R    &lh_pht LSFT S    &lh_pht LCTL T    &kp G    &kp M    &rh_pht RCTL N    &rh_pht RSFT E    &rh_pht RGUI I    &rh_pht RALT O
-    &kp Z       &kp X        &kp C          &kp D        &kp V          &kp K      &kp H         &kp COMMA       &kp DOT     &kp FSLH
-                                            &kp BKSP     &lt 1 TAB      &lt 1 RET  &kp SPACE
+    &kp Q    &kp W    &kp F     &kp P        &kp B         &kp J      &kp L          &kp U        &kp Y      &kp SEMI
+    &kp A    &kp R    &kp S     &kp T        &kp G         &kp M      &kp N          &kp E        &kp I      &kp O
+    &kp Z    &kp X    &kp C     &kp D        &kp V         &kp K      &kp H          &kp COMMA    &kp DOT    &kp FSLH
+                                &sl 2 BKSP   &lt 1 TAB     &lt 1 RET  &sl 3 SPACE
                         >;
                 };
 
@@ -165,6 +151,24 @@
     &kp PLUS    &kp N4      &kp N5       &kp N6      &kp STAR           &kp LARW   &kp DARW    &kp UARW  &kp RARW    &kp EQUAL
     &kp N0      &kp N1      &kp N2       &kp N3      &kp HASH           &kp GRAVE  &kp AMPS    &kp PIPE  &kp UNDER   &kp BSLH
                                          &kp CARET   &kp DLLR           &kp GT     &kp MINUS
+                        >;
+                };
+
+                modsl {
+                        bindings = <
+    &trans      &trans       &trans       &trans      &trans      &trans    &trans     &trans    &trans      &trans
+    &sk LALT    &sk LGUI     &sk LSFT     &sk LCTL    &trans      &trans    &trans     &trans    &trans      &trans
+    &trans      &trans       &trans       &trans      &trans      &trans    &trans     &trans    &trans      &trans
+                                          &trans      &trans      &trans    &trans
+                        >;
+                };
+
+                modsr {
+                        bindings = <
+    &trans    &trans   &trans   &trans  &trans      &trans    &trans       &trans        &trans      &transEMI
+    &trans    &trans   &trans   &trans  &trans      &trans    &sk RCTL     &sk RSFT      &sk RGUI    &sk RALT
+    &trans    &trans   &trans   &trans  &trans      &trans    &trans       &transOMMA    &transOT    &transSLH
+                                &trans  &trans      &trans    &trans
                         >;
                 };
         };
