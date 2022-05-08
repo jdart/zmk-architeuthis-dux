@@ -138,10 +138,10 @@
                 compatible = "zmk,keymap";
                 default_layer {
                         bindings = <
-    &kp Q    &kp W    &kp F     &kp P        &kp B         &kp J      &kp L          &kp U        &kp Y      &kp SEMI
-    &kp A    &kp R    &kp S     &kp T        &kp G         &kp M      &kp N          &kp E        &kp I      &kp O
-    &kp Z    &kp X    &kp C     &kp D        &kp V         &kp K      &kp H          &kp COMMA    &kp DOT    &kp FSLH
-                                &sl 2 BKSP   &lt 1 TAB     &lt 1 RET  &sl 3 SPACE
+      &kp Q     &kp W    &kp F     &kp P        &kp B         &kp J      &kp L          &kp U        &kp Y      &kp SEMI
+      &kp A     &kp R    &kp S     &kp T        &kp G         &kp M      &kp N          &kp E        &kp I      &kp O
+      &kp Z     &kp X    &kp C     &kp D        &kp V         &kp K      &kp H          &kp COMMA    &kp DOT    &kp FSLH
+                                  &sl 2 BKSP   &lt 1 TAB     &lt 1 RET  &sl 3 SPACE
                         >;
                 };
 
@@ -165,10 +165,10 @@
 
                 modsr {
                         bindings = <
-    &trans    &trans   &trans   &trans  &trans      &trans    &trans       &trans        &trans      &transEMI
-    &trans    &trans   &trans   &trans  &trans      &trans    &skq RCTL    &skq RSFT     &skq RGUI   &skq RALT
-    &trans    &trans   &trans   &trans  &trans      &trans    &trans       &transOMMA    &transOT    &transSLH
-                                &trans  &trans      &trans    &trans
+    &trans      &trans   &trans   &trans    &trans      &trans    &trans       &trans        &trans      &trans
+    &trans      &trans   &trans   &trans    &trans      &trans    &skq RCTL    &skq RSFT     &skq RGUI   &skq RALT
+    &trans      &trans   &trans   &trans    &trans      &trans    &trans       &trans        &trans      &trans
+                                  &trans    &trans      &trans    &trans
                         >;
                 };
         };
